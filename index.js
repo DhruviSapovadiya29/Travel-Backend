@@ -13,11 +13,12 @@ import bookingRoute from './routes/bookings.js';
 dotenv.config();
 const app = express();
 const port = process.env.PORT;
+const FRONTEND_URL = 'https://travel-frontend-neon.vercel.app/';
 const LOCAL_URL = 'http://localhost:3000';
 
 // ✅ Optimized CORS Setup
 const corsOptions = {
-    origin: [LOCAL_URL],
+    origin:[FRONTEND_URL, LOCAL_URL],
     credentials: true,
     methods: "GET, POST, PUT, DELETE, OPTIONS",
     allowedHeaders: "Origin, X-Requested-With, Content-Type, Accept, Authorization"
